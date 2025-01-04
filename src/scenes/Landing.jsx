@@ -46,19 +46,20 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="text-6xl font-playfair z-10 text-center md:text-start">
-            Therapati {""}
-            <span
-              className="xs:relative xs:text-deep-blue xs:font-semibold z-20 xs:before:content-brush
-              before:absolute before:-left-[25px] before:-top-[70px] before:z-[-1]"
-            >
-              Srinivas
-            </span>
-          </p>
+         <motion.p
+  initial={{ opacity: 0, y: -50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, ease: "easeOut" }}
+  className="font-playfair font-semibold text-5xl text-center md:text-start
+             bg-gradient-rainblue 
+             bg-clip-text text-transparent animate-pulse hover:bg-blue"
+>
+  Therapati Srinivas
+</motion.p>
 
           <p className="mt-10 mb-7 text-sm text-center md:text-start">
           Hi there! 👋
-          Welcome to my portfolio, I'm a passionate Full Stack Developer with over 2 years of experience an Associate Software Engineer.
+          Welcome to my portfolio, I'm a passionate Full Stack Developer with over 2 years of experience as an Associate Software Engineer.
           I have expertise in technologies like Java, Spring Boot, React, Selenium and AWS.
           Currently pursuing my Master's in Computer Science at the University of Central Missouri.
           Want to know more about me? Feel free to reach out by clicking the button below.

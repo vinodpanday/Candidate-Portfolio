@@ -23,7 +23,7 @@ const projectDescription=[
   "Matresses is an e-commerce web application developed using Java and Spring Boot for backend and React.js for frontend and MongoDB database management. Admin manages the product details and manipulates the customer orders.Customer can browse through products,can select different variants of a product add to cart and place an order either for delivery or pickup.",
 ]
 
-const Project = ({ title,description }) => {
+const Project = ({ title,description,link }) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue overflow-hidden`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
@@ -39,7 +39,7 @@ const Project = ({ title,description }) => {
           <a
                       className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
                         hover:bg-blue hover:text-white transition duration-500"
-                    href="https://github.com/srinivastherapati/Matresses"
+                    href={link}
                     target="_blank"
                     rel="noreferrer"
                     >
@@ -95,15 +95,19 @@ const Projects = () => {
             className="flex justify-center text-center items-center p-10 bg-red
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
-           Hover over the images to see project details and click on view in git to see the code
+           Hover over the images to see project details.
           </div>
-          <Project title="Lease Management" description={projectDescription[0]}  />
-          <Project title="Gas Station" description={projectDescription[1]} />
-          <Project title="Stadium Ticket booking" description={projectDescription[2]} />
-          <Project title="Matresses" description={projectDescription[2]} />
+          <Project title="Lease Management" description={projectDescription[0]}
+           link={"https://github.com/srinivastherapati/LeaseManagement"}  />
+          <Project title="Gas Station" description={projectDescription[1]}
+          link={"https://github.com/srinivastherapati/GasStation"} />
+          <Project title="Stadium Ticket booking" description={projectDescription[2]} 
+          link={"https://github.com/srinivastherapati/StadiumTicketBooking"} />
+          <Project title="Matresses" description={projectDescription[2]} 
+          link={"https://github.com/srinivastherapati/Matresses"}/>
           
           <div
-            className="flex justify-center text-center items-center p-10 bg-blue
+            className="flex justify-center text-center items-center p-10 bg-dark-grey
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
               <a

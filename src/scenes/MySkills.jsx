@@ -23,9 +23,11 @@ const MySkills = () => {
             MY <span className="text-red">SKILLS</span>
           </p>
           <LineGradient width="w-1/3" />
-          <p className="mt-10 mb-7 text-base md:text-lg">
-           As a full stack developer I have worked on varoius Frontend, Backend and Database technologies.
-            I have also worked on various tools and technologies which are used in the software development process.
+          <p className="mt-10 mb-7 ">
+          As a passionate Software Engineer, I am committed to continuous learning and skill development, 
+          driven by both personal interests and professional experience. As a Full Stack Developer, 
+          I have expertise in a wide range of frontend, backend, and database technologies, 
+          along with hands-on experience with various tools and frameworks integral to the software development lifecycle.
           </p>
         </motion.div>
 
@@ -71,7 +73,7 @@ const MySkills = () => {
             <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            <ul className="list-disc ml-5 text-base md:text-lg">
+            <ul className="list-disc ml-5 ">
               <li>HTML,CSS,JavaSrcipt,ReactJs</li>
               <li>Tailwand CSS,Bootstrap</li>
               <li>Framer Motion</li>
@@ -101,7 +103,7 @@ const MySkills = () => {
             <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-          <ul className="list-disc ml-5 text-base md:text-lg">
+          <ul className="list-disc ml-5 ">
               <li>Java, SpringBoot,Spring Data JPA,Node.js,Express.js</li>
               <li>REST APIs,Microservices</li>
               <li>CRON jobs,Thymeleaf</li>
@@ -130,7 +132,7 @@ const MySkills = () => {
             <div className="w-1/2 md:w-3/4 h-32 bg-dark-grey absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-          <ul className="list-disc ml-5 text-base md:text-lg">
+          <ul className="list-disc ml-5 ">
               <li>MySQL,PostgeSQL</li>
               <li>MongoDB</li>
               <li>AWS</li>
@@ -150,7 +152,7 @@ const MySkills = () => {
         >
           <div className="relative h-32">
             <div className="z-10">
-              <p className="font-playfair font-semibold text-5xl">03</p>
+              <p className="font-playfair font-semibold text-5xl">04</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
               Miscellaneous
               </p>
@@ -158,10 +160,10 @@ const MySkills = () => {
             <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-          <ul className="list-disc ml-5 text-base md:text-lg">
+          <ul className="list-disc ml-5 ">
               <li>Selenium, JUnit, Mockito (Testing Frameworks)</li>
               <li>GitHub, CI/CD, Docker, Kubernetes (Version Control & DevOps)</li>
-                 <li>Jira, OAuth2 (Project Management & Authentication)</li>
+                 <li>Jira, OAuth2 </li>
             </ul>
           </p>
         </motion.div>

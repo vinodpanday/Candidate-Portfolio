@@ -17,16 +17,16 @@ const Resume = () => {
         }}
       >
         <p className="font-playfair font-semibold text-4xl mb-5 text-red">
-          My-Resume
+          Resume
         </p>
         <LineGradient width="mx-auto w-2/5" />
         <p className="mt-10">
-          Here is my resume which includes my work experience, education and skills
+          Here is my resume which includes my work experience, education.Click <b>View Resume</b> to navigate to my resume .
         </p>
       </motion.div>
 
       {/* TESTIMONIALS */}
-      <div className="md:flex md:justify-between gap-8">
+      <div className="md:flex md:justify-between gap-8 ">
         <motion.div
           className="mx-auto relative bg-blue max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
             "
@@ -39,7 +39,7 @@ const Resume = () => {
             visible: { opacity: 1, scale: 1 },
           }}
         >
-          <p className="font-playfair text-3xl text-center mb-4">Education</p>
+          <p className="font-playfair text-3xl text-center mb-4 ">Education</p>
   <div className="text-center text-lg">
     <p className="font-bold">Master's in Computer Science</p>
     <p className="italic">University of Central Missouri</p>
@@ -88,13 +88,13 @@ const Resume = () => {
           Click below to view or download my detailed resume, showcasing my professional journey and accomplishments.
         </p>
           <a
-                      className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
+                      className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-20 font-semibold
                         hover:bg-blue hover:text-white transition duration-500 "
                     href="https://drive.google.com/file/d/1d1F4_s5SmiNKjm4SaGBzLSGcSwfQiSdp/view?usp=sharing"
                     target="_blank"
                     rel="noreferrer"
                     >
-                     View My Resume
+                     View Resume
            </a>
         </motion.div>
       </div>
