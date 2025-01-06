@@ -16,10 +16,10 @@ const Resume = () => {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <p className="font-playfair font-semibold text-4xl mb-5 text-red">
-          Resume
+        <p className="font-playfair font-semibold text-4xl mb-5">
+        <span className="text-red">RE</span>SUME
         </p>
-        <LineGradient width="mx-auto w-2/5" />
+        <LineGradient width="w-2/3" />
         <p className="mt-10">
           Here is my resume which includes my work experience, education.Click <b>View Resume</b> to navigate to my resume .
         </p>
@@ -42,10 +42,10 @@ const Resume = () => {
           <p className="font-playfair text-3xl text-center mb-4 ">Education</p>
   <div className="text-center text-lg">
     <p className="font-bold">Master's in Computer Science</p>
-    <p className="italic">University of Central Missouri</p>
+    <p className="font-playfair">University of Central Missouri</p>
     <p className="text-sm">GPA: 3.6/4.0</p>
     <p className="mt-4 font-bold">Bachelor's in Computer Science</p>
-    <p className="italic">Keshav Memorial Institute of Technology</p>
+    <p className="font-playfair">Keshav Memorial Institute of Technology</p>
     <p className="text-sm">GPA: 3.5/4.0</p>
   </div>
         </motion.div>
@@ -84,7 +84,7 @@ const Resume = () => {
             visible: { opacity: 1, scale: 1 },
           }}
         >
-         <p className="">
+         <p className="font-playfair text-xl text-center mb-4">
           Click below to view or download my detailed resume, showcasing my professional journey and accomplishments.
         </p>
           <a
