@@ -90,7 +90,7 @@ const Resume = () => {
     </p>
     <a
       className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-20 font-semibold hover:bg-blue hover:text-white transition duration-500 text-center mx-auto"
-      href="https://drive.google.com/file/d/1d1F4_s5SmiNKjm4SaGBzLSGcSwfQiSdp/view?usp=sharing"
+      href="https://drive.google.com/file/d/1iIWjbiniD9vHUdONw8a_BDE6MPWQdM9b/view?usp=sharing"
       target="_blank"
       rel="noreferrer"
     >
