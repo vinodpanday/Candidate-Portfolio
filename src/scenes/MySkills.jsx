@@ -23,12 +23,9 @@ const MySkills = () => {
             MY <span className="text-red">SKILLS</span>
           </p>
           <LineGradient width="w-1/3" />
-          <p className="mt-10 mb-7 ">
-          As a passionate Software Engineer, I am committed to continuous learning and skill development, 
-          driven by both personal interests and professional experience. As a Full Stack Developer, 
-          I have expertise in a wide range of frontend, backend, and database technologies, 
-          along with hands-on experience with various tools and frameworks integral to the software development lifecycle.
-          </p>
+          <div className="mt-10">
+</div>
+
         </motion.div>
 
         <div className="mt-16 md:mt-0">
@@ -51,7 +48,6 @@ const MySkills = () => {
 
       {/* SKILLS */}
       <div className="md:flex md:justify-between mt-16 gap-32">
-        {/* EXPERIENCE */}
         <motion.div
           className="md:w-1/3 mt-10"
           initial="hidden"
@@ -67,16 +63,16 @@ const MySkills = () => {
             <div className="z-10">
               <p className="font-playfair font-semibold text-5xl">01</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
-                Frontend Development
+                Reporting tools
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
+            <div className="w-1/2 md:w-3/4 h-32 bg-dark-grey absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
             <ul className="list-disc ml-5 ">
-              <li>HTML,CSS,JavaSrcipt,ReactJs</li>
-              <li>Tailwand CSS,Bootstrap</li>
-              <li>Framer Motion</li>
+              <li>Power BI</li>
+              <li>SQL Server Reporting Services (SSRS)</li>
+              <li>Tableau</li>
             </ul>
           </p>
         </motion.div>
@@ -97,16 +93,17 @@ const MySkills = () => {
             <div className="z-10">
               <p className="font-playfair font-semibold text-5xl">02</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
-                Backend Development
+              Database Management
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
+            <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
           <ul className="list-disc ml-5 ">
-              <li>Java, SpringBoot,Spring Data JPA,Node.js,Express.js</li>
-              <li>REST APIs,Microservices</li>
-              <li>CRON jobs,Thymeleaf</li>
+              <li>SQL Server (SSAS)</li>
+              <li>Oracle and Snowflake</li>
+              <li>DB2</li>
+              <li>Azure SQL</li>
             </ul>
           </p>
         </motion.div>
@@ -126,16 +123,15 @@ const MySkills = () => {
             <div className="z-10">
               <p className="font-playfair font-semibold text-5xl">03</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
-                DataBases and Cloud
+              Cloud Platforms
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-dark-grey absolute right-0 top-0 z-[-1]" />
+            <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
           <ul className="list-disc ml-5 ">
-              <li>MySQL,PostgeSQL</li>
-              <li>MongoDB</li>
-              <li>AWS</li>
+              <li>Azure DevOps (ADO)</li>
+              <li>AWS (Support)</li>
             </ul>
           </p>
         </motion.div>
@@ -157,16 +153,16 @@ const MySkills = () => {
               Miscellaneous
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
+            <div className="w-1/2 md:w-3/4 h-32  bg-blue absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
           <ul className="list-disc ml-5 ">
-              <li>Selenium, JUnit, Mockito (Testing Frameworks)</li>
-              <li>GitHub, CI/CD, Docker, Kubernetes (Version Control & DevOps)</li>
-                 <li>Jira, OAuth2 </li>
+              <li>Automation (Python and Node.js)</li>
+                 <li>Microsoft Fabric ( Data Integration) </li>
             </ul>
           </p>
         </motion.div>
+        
       </div>
     </section>
   );

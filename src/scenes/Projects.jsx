@@ -1,126 +1,220 @@
-import LineGradient from "../components/LineGradient";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
+import useMediaQuery from '../hooks/useMediaQuery';
+import LineGradient from '../components/LineGradient';
+import VerticalGradient from '../components/VerticalGradient';
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
+const Project = [
+    {
+      title: "Application Security & Orch",
+      duration: "May 2024 – Present",
+      client:"T-Mobile",
+      environment:"Power BI",
+      role:"Lead Developer UI/UX",
+      aboutTheProject: [
+       " Designed and enhanced user interfaces for Power BI dashboards, prioritizing user-centric design and seamless interaction.",
+ "Collaborated with stakeholders to align designs with business goals and optimize reports for performance.",
+ "Implemented automation workflows for data refreshing, report generation, and dashboard updates.",
+ "Developed proof-of-concepts (POCs) to showcase new ideas and technologies.",
+ "Stayed updated on UI/UX trends and Power BI advancements to improve internal processes."
+      ],
     },
-  },
-};
-
+    {
+      title: "Acacium Group",
+      duration: "Feb 2024 – Present",
+      client:"T-Mobile",
+      environment:"Power BI, ADO",
+      role:"Core Lead",
+      aboutTheProject: [
+        "Analysed requirements, clarified with clients, and planned estimates.",
+        "Designed, developed, and delivered Power BI dashboards and paginated reports using DAX, Power Query, and custom visuals.",
+        "Ensured data integrity through cleansing, validation, and reconciliation tasks.",
+        " Optimized application performance and ensured timely deployments.",
+        "Worked in an Azure cloud environment to meet diverse stakeholder needs."
+      ],
+    },
+    {
+      title: "BHF and WBS",
+      duration: "Mar 2023 – Nov 2023",
+      client:"Elevance Health",
+      environment:"Power BI Report Server (SSAS)",
+      role:"Application Developer",
+      aboutTheProject: [
+       "Designed and delivered dashboards for tracking member engagement and cost utilization.",
+        "Developed SQL queries and tabular models using SSAS for efficient data retrieval.",
+         "Created calculations, KPIs, and visualizations in Power BI.",
+         "Conducted data analysis to identify trends and optimize decision-making.",
+        "Provided technical support and training for self-service reporting."
+      ],
+    },
+    {
+      title: "Supply Chain Analytics",
+      duration: "Feb 2024 – Present",
+      client:"Albertsons",
+      environment:"Power BI Pro",
+      role:"Application Developer",
+      aboutTheProject: [
+        "Designed Power BI reports and dashboards for retail and supply chain analytics.",
+"Transformed data by creating SQL views and optimizing database performance.",
+"Developed templates, checklists, and failure alert systems for Power BI.",
+"Implemented workflows using Power Automate for automated data processing."
+      ],
+    },
+    {
+      title: "AMI M&S",
+      duration: "Aug 2019 – Sep 2020",
+      client:"Nissan",
+      environment:"Tableau 2019.2",
+      role:"Tableau Developer",
+      aboutTheProject: [
+        "Developed performance-optimized dashboards and visualizations in Tableau.",
+"Diagnosed and resolved data integrity issues, ensuring seamless functionality.",
+"Collaborated with business users to implement data analysis solutions."
+      ],
+    },
+    {
+      title: "Sales Analytics",
+      duration: "Jan 2018 – Oct 2018",
+      client:"Hindustan Unilever Limited",
+      environment:"Tableau 10.5",
+      role:"Tableau Developer",
+      aboutTheProject: [
+        "Developed dashboards using calculated fields, parameters, and table calculations.",
+"Designed interactive visuals, including groupings, sets, and hierarchies.",
+"Created drill-through reports for detailed purchase order and invoice analysis."
+      ],
+    },
+  ];
   
 
-const projectVariant = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1 },
-};
-const projectDescription=[
-  "Lease Management Application is developed using Node.js and Express.js for backend development and React.js for frontend development and MongoDB database management. Admin manages the rental and payment details.Customer can apply to a lease and manages his own lease, can raise a complaint regarding an issue and can see future and past payments.",
-  "Gas Station Management Application is developed using Java and Spring Boot for backend development and React.js for frontend development and MongoDB database management. Admin manages the gas station details, fuel prices and Inventory.Customer can browse through products, add to cart and place an order either pickup or delivery.",
-  "Stadium Ticket booking is a web application developed using Java and Spring Boot for backend and React.js for frontend  and MongoDB database management. Admin manages the stadium details and manipulates stadium manager request.Stadium manager manages events and ticket prices for his stadium.Customer can browse through events, select the event and book tickets.",
-  "Matresses is an e-commerce web application developed using Java and Spring Boot for backend and React.js for frontend and MongoDB database management. Admin manages the product details and manipulates the customer orders.Customer can browse through products,can select different variants of a product add to cart and place an order either for delivery or pickup.",
-]
-
-const Project = ({ title,description,link }) => {
-  const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue overflow-hidden`;
-  const projectTitle = title.split(" ").join("-").toLowerCase();
-
-  return (
-    <motion.div variants={projectVariant} className="relative">
-      <div className={overlayStyles}>
-        <p className="text-2xl font-playfair">{title}</p>
-        <p className="mt-7 max-h-20 overflow-y-auto text-base md:text-lg " >
-          
-        {description}
-        </p>
-          <a
-                      className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
-                        hover:bg-blue hover:text-white transition duration-500"
-                    href={link}
-                    target="_blank"
-                    rel="noreferrer"
-                    >
-                     View in Git
-           </a>
-       
-      </div>
-      <img src={`../assets/${projectTitle}.jpg`} alt={projectTitle} />
-    </motion.div>
-  );
-};
-
 const Projects = () => {
+  const isAboveLarge = useMediaQuery("(min-width: 1060px)");
+  const [dialogContent, setDialogContent] = React.useState(null);
+
+  const handleDialogOpen = (content) => {
+    setDialogContent(content);
+    const backdrop = document.querySelector(`[project-dialog-backdrop="animated-dialog"]`);
+    const dialog = document.querySelector(`[project-dialog="animated-dialog"]`);
+
+    if (backdrop && dialog) {
+      backdrop.classList.remove('pointer-events-none', 'opacity-0');
+      dialog.classList.remove('opacity-0', '-translate-y-28', 'scale-90', 'pointer-events-none');
+    }
+  };
+
+  const handleDialogClose = () => {
+    setDialogContent(null);
+    const backdrop = document.querySelector(`[project-dialog-backdrop="animated-dialog"]`);
+    const dialog = document.querySelector(`[project-dialog="animated-dialog"]`);
+
+    if (backdrop && dialog) {
+      backdrop.classList.add('pointer-events-none', 'opacity-0');
+      dialog.classList.add('opacity-0', '-translate-y-28', 'scale-90', 'pointer-events-none');
+    }
+  };
+
   return (
-    <section id="projects" className="pt-48 pb-48">
-      {/* HEADINGS */}
-      <motion.div
-        className="md:w-2/5 mx-auto text-center"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5 }}
-        variants={{
-          hidden: { opacity: 0, y: -50 },
-          visible: { opacity: 1, y: 0 },
-        }}
-      >
-        <div>
+    <section id="projects" className="pt-10 pb-24">
+      {/* HEADER SECTION */}
+      <div className="text-center mt-10">
+        <motion.h1
+          className="text-4xl font-semibold"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, y: -50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
+          <div>
           <p className="font-playfair font-semibold text-4xl">
             <span className="text-red">PRO</span>JECTS
           </p>
           <div className="flex justify-center mt-5">
-            <LineGradient width="w-2/3" />
+            <LineGradient width="w-1/3" />
+          </div>
+          
+        </div>
+        </motion.h1>
+      </div>
+      {/* EXPERIENCES */}
+      <div className="flex flex-wrap justify-between gap-6 mt-16 mx-auto max-w-6xl px-1">
+        {Project.map((project, index) => (
+          <motion.div
+            key={index}
+            className={` shadow-md rounded-lg p-6 flex flex-col items-start ${
+              isAboveLarge ? 'w-[30%]' : 'w-full sm:w-48'
+            }`}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+               <div className="w-full flex">
+  <VerticalGradient height="h-auto" />
+  <div className="ml-2">
+    <h2 className="font-playfair text-xl font-semibold">{project.title}</h2>
+    <p className="font-playfair text-lg font-medium ">Client: {project.client}</p>
+    <p className="font-playfair text-lg font-medium">{project.duration}</p>
+  </div>
+</div>
+            <button onClick={() => handleDialogOpen(project.aboutTheProject)}
+  className="text- left text-gradient bg-gradient-rainblue py-3  font-semibold flex items-center gap-2 transition duration-500 cursor-pointer  hover:scale-105"
+>
+  About The Project:
+  <span className="inline-flex items-center">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      className="w-5 h-5 fill-current"
+    >
+      <path
+        fill="currentColor"
+        d="M17.92,11.62a1,1,0,0,0-.21-.33l-5-5a1,1,0,0,0-1.42,1.42L14.59,11H7a1,1,0,0,0,0,2h7.59l-3.3,3.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l5-5a1,1,0,0,0,.21-.33A1,1,0,0,0,17.92,11.62Z"
+      />
+    </svg>
+  </span>
+</button>
+
+          </motion.div>
+        ))}
+      </div>
+
+      {/* DIALOG */}
+      <div
+        project-dialog-backdrop="animated-dialog"
+        onClick={handleDialogClose}
+        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+      >
+        <div
+          project-dialog="animated-dialog"
+          className="relative m-4 p-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-deep-blue shadow-sm opacity-0 -translate-y-28 scale-90 pointer-events-none transition-all duration-300"
+        >
+          <div className="flex shrink-0 items-center pb-4 text-xl font-playfair font-semibold ">
+            About The Project
+          </div>
+          <LineGradient />
+          <div className="relative  py-4 leading-normal font-playfair ">
+          <ul className="list-disc ml-5">
+              {dialogContent?.map((resp, idx) => (
+                    <li key={idx}>{resp}</li> ))}
+                </ul>
+            </div>
+          <div className="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+            <button
+              onClick={handleDialogClose}
+              className="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all hover:bg-yellow focus:bg-yellow active:bg-yellow"
+            >
+              Close
+            </button>
           </div>
         </div>
-        <p className="mt-10 mb-10">
-          Here are the list of projects I have worked on.
-          I have developed diverse projects leveraging technologies like Java, Spring Boot, Node.js, React.js, and MongoDB.
-        </p>
-      </motion.div>
-
-      {/* PROJECTS */}
-      <div className="flex justify-center">
-        <motion.div
-          className="sm:grid sm:grid-cols-3"
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {/* ROW 1 */}
-          <div
-            className="flex justify-center text-center items-center p-10 bg-red
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-          >
-           Hover over the images to see project details.
-          </div>
-          <Project title="Lease Management" description={projectDescription[0]}
-           link={"https://github.com/srinivastherapati/LeaseManagement"}  />
-          <Project title="Gas Station" description={projectDescription[1]}
-          link={"https://github.com/srinivastherapati/GasStation"} />
-          <Project title="Stadium Ticket booking" description={projectDescription[2]} 
-          link={"https://github.com/srinivastherapati/StadiumTicketBooking"} />
-          <Project title="Matresses" description={projectDescription[2]} 
-          link={"https://github.com/srinivastherapati/Matresses"}/>
-          
-          <div
-            className="flex justify-center text-center items-center p-10 bg-dark-grey
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-          >
-              <a
-                      className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
-                        hover:bg-blue hover:text-white transition duration-500"
-                    href="https://github.com/srinivastherapati?tab=repositories"
-                    target="_blank"
-                    rel="noreferrer"
-                    >
-                     View More in Git repository
-           </a>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -8,8 +8,9 @@ import Contact from "./scenes/Contact";
 import Footer from "./scenes/Footer";
 import useMediaQuery from "./hooks/useMediaQuery";
 import { useEffect, useState } from "react";
-import Resume from "./scenes/Resume";
 import { motion } from "framer-motion";
+import WorkExperience from "./scenes/WorkExperience";
+import Certifications from "./scenes/Certifications";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -35,7 +36,7 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <div className="w-5/6 mx-auto md:h-full">
+      <div className="w-5/6 mx-auto ">
         {isDesktop && (
           <DotGroup
             selectedPage={selectedPage}
@@ -61,6 +62,16 @@ function App() {
         </motion.div>
       </div>
       <LineGradient />
+      <div className="w-5/6 mx-auto h-auto ">
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("experience")}
+        >
+          <WorkExperience />
+        </motion.div>
+      </div>
+      <LineGradient />
       <div className="w-5/6 mx-auto">
         <motion.div
           margin="0 0 -200px 0"
@@ -71,6 +82,16 @@ function App() {
         </motion.div>
       </div>
       <LineGradient />
+      <div className="w-5/6 mx-auto">
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("certifications")}
+        >
+          <Certifications />
+        </motion.div>
+      </div>
+      {/* <LineGradient />
       <div className="w-5/6 mx-auto h-auto">
         <motion.div
           margin="0 0 -200px 0"
@@ -79,7 +100,7 @@ function App() {
         >
           <Resume />
         </motion.div>
-      </div>
+      </div> */}
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
         <motion.div

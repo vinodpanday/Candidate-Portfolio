@@ -66,16 +66,16 @@ const Contact = () => {
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
           }}
-          className="basis-1/2 mt-10 md:mt-0"
+          className="basis-1/2 mt-1 md:mt-0"
         >
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/8dc151618ce3395d5e52489342e9e0ea"
+            action="https://formsubmit.co/vinod.datainsights@gmail.com"
             method="POST"
           >
             <input
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
+              className="w-full bg-deep-blue font-semibold placeholder-opaque-white p-1"
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -91,7 +91,7 @@ const Contact = () => {
             )}
 
             <input
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
+              className="w-full bg-deep-blue font-semibold placeholder-opaque-white p-1 mt-5"
               type="text"
               placeholder="EMAIL"
               {...register("email", {
@@ -107,11 +107,11 @@ const Contact = () => {
             )}
 
             <textarea
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
+              className="w-full bg-deep-blue font-semibold placeholder-opaque-white p-1 mt-5"
               name="message"
               placeholder="MESSAGE"
-              rows="4"
-              cols="50"
+              rows="2"
+              cols="10"
               {...register("message", {
                 required: true,
                 maxLength: 2000,
@@ -127,7 +127,7 @@ const Contact = () => {
             )}
 
             <button
-              className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
+              className="p-2 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
               type="submit"
             >
               SEND ME A MESSAGE

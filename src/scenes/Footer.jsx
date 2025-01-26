@@ -7,10 +7,10 @@ const Footer = () => {
         <SocialMediaIcons />
         <div className="md:flex justify-center md:justify-between text-center ">
           <p className="font-playfair font-semibold text-2xl text-yellow">
-            Therapati Srinivas
+          Pullgura, Vinod
           </p>
           <p className="font-playfair text-md text-yellow">
-            ©2025 Srinivas. All Rights Reserved.
+            ©2025 Vinod. All Rights Reserved.
           </p>
         </div>
       </div>

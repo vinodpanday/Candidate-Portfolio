@@ -21,6 +21,13 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
         } w-3 h-3 rounded-full`}
         onClick={() => setSelectedPage("skills")}
       />
+      <AnchorLink
+        href="#experience"
+        className={`${
+          selectedPage === "experience" ? selectedStyles : "bg-dark-grey"
+        } w-3 h-3 rounded-full`}
+        onClick={() => setSelectedPage("experience")}
+      />
 
       <AnchorLink
         href="#projects"
@@ -29,14 +36,21 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
         } w-3 h-3 rounded-full`}
         onClick={() => setSelectedPage("projects")}
       />
-
       <AnchorLink
+        href="#certifications"
+        className={`${
+          selectedPage === "certifications" ? selectedStyles : "bg-dark-grey"
+        } w-3 h-3 rounded-full`}
+        onClick={() => setSelectedPage("certifications")}
+      />
+
+      {/* <AnchorLink
         href="#resume"
         className={`${
           selectedPage === "resume" ? selectedStyles : "bg-dark-grey"
         } w-3 h-3 rounded-full`}
         onClick={() => setSelectedPage("resume")}
-      />
+      /> */}
 
       <AnchorLink
         href="#contact"

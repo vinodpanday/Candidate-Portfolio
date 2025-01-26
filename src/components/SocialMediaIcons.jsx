@@ -1,6 +1,6 @@
 const SocialMediaIcons = () => {
   return (
-    <div className="flex justify-center md:justify-start my-10 gap-7 bg-gradient-rainblue p-5 rounded-full">
+    <div className="flex justify-center md:justify-start my-10 gap-3  p-5 rounded-full">
       <a
         className="hover:opacity-50 transition duration-500"
         href="https://www.linkedin.com/in/srinivas-therapati-783a04205/"
@@ -16,14 +16,6 @@ const SocialMediaIcons = () => {
         rel="noreferrer"
       >
         <img alt="github-link" src="../assets/github.png"  title="Github"/>
-      </a>
-      <a
-        className="hover:opacity-50 transition duration-500"
-        href="https://leetcode.com/u/stherapati/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img alt="leetcode-link" src="../assets/leetcode.png" title="Leetcode" />
       </a>
     </div>
   );
