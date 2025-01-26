@@ -73,6 +73,18 @@ const Project = [
       ],
     },
     {
+      title: "Five Star",
+      duration: "Nov 2018 – Aug 2019",
+      client:"Five Star",
+      environment:"Tableau 2018.3",
+      role:"Tableau Developer",
+      aboutTheProject: [
+        "Created dashboards using client-specific requirements and maintained historical data.",
+"Developed filters, parameters, and calculated fields for customized insights.",
+"Provided support documentation and updated existing processes."
+      ],
+    },
+    {
       title: "Sales Analytics",
       duration: "Jan 2018 – Oct 2018",
       client:"Hindustan Unilever Limited",
@@ -84,15 +96,30 @@ const Project = [
 "Created drill-through reports for detailed purchase order and invoice analysis."
       ],
     },
+
+    {
+      title: "SV Insight",
+      duration: "Jul 2015 – Dec 2017",
+      client:"iControl Systems, US",
+      environment:"Tableau 8.3 – 10.5",
+      role:"Tableau Developer",
+      aboutTheProject: [
+        "Designed dashboards using advanced calculations and visualizations.",
+"Implemented row-level security for data access and reporting.",
+"Created storytelling dashboards and supported data refresh schedules.",
+"Conducted business requirement analysis and validated data quality."
+      ],
+    },
   ];
   
 
 const Projects = () => {
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
-  const [dialogContent, setDialogContent] = React.useState(null);
+  const [dialogContent, setDialogContent] = React.useState();
 
-  const handleDialogOpen = (content) => {
-    setDialogContent(content);
+  const handleDialogOpen = (project) => {
+    setDialogContent(project);
+    console.log(project);
     const backdrop = document.querySelector(`[project-dialog-backdrop="animated-dialog"]`);
     const dialog = document.querySelector(`[project-dialog="animated-dialog"]`);
 
@@ -140,7 +167,7 @@ const Projects = () => {
         </motion.h1>
       </div>
       {/* EXPERIENCES */}
-      <div className="flex flex-wrap justify-between gap-6 mt-16 mx-auto max-w-6xl px-1">
+      <div className="flex flex-wrap justify-start gap-6 mt-16 mx-auto max-w-6xl px-1">
         {Project.map((project, index) => (
           <motion.div
             key={index}
@@ -164,7 +191,7 @@ const Projects = () => {
     <p className="font-playfair text-lg font-medium">{project.duration}</p>
   </div>
 </div>
-            <button onClick={() => handleDialogOpen(project.aboutTheProject)}
+            <button onClick={() => handleDialogOpen(project)}
   className="text- left text-gradient bg-gradient-rainblue py-3  font-semibold flex items-center gap-2 transition duration-500 cursor-pointer  hover:scale-105"
 >
   About The Project:
@@ -188,34 +215,36 @@ const Projects = () => {
 
       {/* DIALOG */}
       <div
-        project-dialog-backdrop="animated-dialog"
+  project-dialog-backdrop="animated-dialog"
+  onClick={handleDialogClose}
+  className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+>
+  <div
+    project-dialog="animated-dialog"
+    className="relative m-4 p-4 w-full max-w-[90%] sm:max-w-[70%] md:max-w-[50%] lg:max-w-[40%] rounded-lg bg-deep-blue shadow-sm opacity-0 -translate-y-28 scale-90 pointer-events-none transition-all duration-300"
+  >
+    <div className="flex shrink-0 items-center pb-4 text-xl font-playfair font-semibold">
+      About The Project ({dialogContent?.role}: {dialogContent?.environment})
+    </div>
+    <LineGradient />
+    <div className="relative py-4 leading-normal font-playfair">
+      <ul className="list-disc ml-5">
+        {dialogContent?.aboutTheProject?.map((resp, idx) => (
+          <li key={idx}>{resp}</li>
+        ))}
+      </ul>
+    </div>
+    <div className="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+      <button
         onClick={handleDialogClose}
-        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+        className="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all hover:bg-yellow focus:bg-yellow active:bg-yellow"
       >
-        <div
-          project-dialog="animated-dialog"
-          className="relative m-4 p-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-deep-blue shadow-sm opacity-0 -translate-y-28 scale-90 pointer-events-none transition-all duration-300"
-        >
-          <div className="flex shrink-0 items-center pb-4 text-xl font-playfair font-semibold ">
-            About The Project
-          </div>
-          <LineGradient />
-          <div className="relative  py-4 leading-normal font-playfair ">
-          <ul className="list-disc ml-5">
-              {dialogContent?.map((resp, idx) => (
-                    <li key={idx}>{resp}</li> ))}
-                </ul>
-            </div>
-          <div className="flex shrink-0 flex-wrap items-center pt-4 justify-end">
-            <button
-              onClick={handleDialogClose}
-              className="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all hover:bg-yellow focus:bg-yellow active:bg-yellow"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
     </section>
   );
 };

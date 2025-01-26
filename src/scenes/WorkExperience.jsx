@@ -174,7 +174,7 @@ const WorkExperience = () => {
                 className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
                 <div
                     data-dialog="animated-dialog"
-                    className="relative m-4 p-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-deep-blue shadow-sm opacity-0 -translate-y-28 scale-90 pointer-events-none transition-all duration-300">
+                    className="relative m-4 p-4 w-full max-w-[90%] sm:max-w-[70%] md:max-w-[50%] rounded-lg bg-deep-blue shadow-sm opacity-0 -translate-y-28 scale-90 pointer-events-none transition-all duration-300">
                     <div
                         className="flex shrink-0 items-center pb-4 text-xl font-playfair font-semibold ">
                         Responsibilities
