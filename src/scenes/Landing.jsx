@@ -100,7 +100,7 @@ const Landing = ({setSelectedPage}) => {
                                     onClick={(e) => e.stopPropagation()}
                                     className="relative m-4 p-6 w-11/12 sm:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[80vh] overflow-y-auto rounded-lg bg-deep-blue shadow-lg">
                                     <button
-                                        className="absolute top-2 right-2 text-gray-700 hover:text-black"
+                                        className="absolute top-2 right-2 bg-yellow"
                                         onClick={() => setIsDialogOpen(false)}>
                                         ✖
                                     </button>
@@ -132,8 +132,13 @@ const Landing = ({setSelectedPage}) => {
                                         ].map((section, idx) => (
                                             <div key={idx} className="mb-6">
                                                 <h3 className="font-playfair text-lg">{section.title}</h3>
-                                                <LineGradient width="w-1/3"/>
-                                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 space-y-2 md:space-y-0">
+                                              {isAboveLarge ? (<LineGradient width="w-1/3"/> ) : <LineGradient />} 
+                                              <ul
+                                            className={`${
+                                                            isAboveLarge
+                                                            ? "grid grid-cols-2 gap-x-8 space-y-2" 
+                                                            : "flex flex-wrap gap-x-6 gap-y-2 justify-start"
+                                                                 }`}>
                                                     {section
                                                         .items
                                                         .map((item, i) => (
